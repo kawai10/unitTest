@@ -27,6 +27,12 @@ describe("Calculator", () => {
     expect(cal.value).toBe(3);
   });
 
+  it("add should throw an error if value is greater than 100", () => {
+    expect(() => {
+      cal.add(101);
+    }).toThrow("Value can not be greater than 100");
+  });
+
   describe("divides", () => {
     it("0 / 0 === NaN", () => {
       cal.divide(0);
